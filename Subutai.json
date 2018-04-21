@@ -1,0 +1,51 @@
+{
+  "name": "${envName}",
+  "description": "testapp",
+  "version": "1.0.1",
+  "author": "Sydyk",
+  "containers": [
+    {
+      "hostname": "debian",
+      "template": "debian-stretch",
+      "peer-criteria": "HTTP-GROUP",
+      "size": "${containerType}"
+    }
+  ],
+  "peer-criteria": [
+    {
+      "name": "HTTP-GROUP"
+    }
+  ],
+  "ansible-configuration": {
+    "source-url": "",
+    "ansible-playbook": "main.yml",
+    "extra-vars": [
+      {
+        "key": "key1",
+        "value": "value1"
+      }
+    ],
+    "groups": [
+      {
+        "name": "os",
+        "hostnames": [
+          "debian"
+        ]
+      }
+    ]
+  },
+  "user-variables": {
+    "containerType": {
+      "description": "You can set TINY,SMALL,MEDIUM,LARGE,HUGE",
+      "type": "enum",
+      "default": "SMALL",
+      "validation": "TINY,SMALL,MEDIUM,LARGE,HUGE"
+    },
+    "envName": {
+      "description": "Enter your environment name",
+      "type": "string",
+      "default": "wordpress env",
+      "validation": "[a-zA-Z0-9]+"
+    }
+  }
+}
