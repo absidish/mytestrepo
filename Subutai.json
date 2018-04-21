@@ -17,7 +17,7 @@
     }
   ],
   "ansible-configuration": {
-    "source-url": "",
+    "source-url": "https://github.com/absidish/mytestrepo/archive/master.zip",
     "ansible-playbook": "main.yml",
     "extra-vars": [
       {
