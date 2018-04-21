@@ -1,1 +1,6 @@
-test
+---
+- hosts: jira
+  tasks:    
+  - name: Copy dbconfig xml
+    template: src="/root/mytestrepo/config.cnf.j2"   dest="/tmp/config.cnf"   mode=777    
+    
