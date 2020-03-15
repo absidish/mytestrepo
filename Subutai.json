@@ -45,7 +45,7 @@
       "description": "New password for ofbiz db user",
       "type": "string",
       "default": "changeme",
-      "validation": "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).{8,}$"
+      "validation": "[a-zA-Z0-9]+"
     },
     "envName": {
       "description": "Enter your environment name",
