@@ -21,8 +21,8 @@
     "ansible-playbook": "main.yml",
     "extra-vars": [
       {
-        "key": "key1",
-        "value": "value1"
+        "key": "password",
+        "value": "${newOFBizdbUserPassword}"
       }
     ],
     "groups": [
@@ -40,6 +40,12 @@
       "type": "enum",
       "default": "SMALL",
       "validation": "TINY,SMALL,MEDIUM,LARGE,HUGE"
+    },
+   "newOFBizdbUserPassword": {
+      "description": "New password for ofbiz db user",
+      "type": "string",
+      "default": "changeme",
+      "validation": "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\S+$).{8,}$"
     },
     "envName": {
       "description": "Enter your environment name",
