@@ -11,15 +11,15 @@
       "size": "CUSTOM",
       "ram": {
         "type": "ram",
-        "value": "2048.0000MiB"
+        "value": "${ram}.0000MiB"
       },
       "cpu": {
         "type": "cpu",
-        "value": "10%"
+        "value": "${cpu}%"
       },
       "disk": {
         "type": "disk",
-        "value": "4.0000GiB"
+        "value": "${disk}.0000GiB"
       }
     }
   ],
@@ -29,12 +29,12 @@
     }
   ],
   "ansible-configuration": {
-    "source-url": "https://gidish/mytestrepo/archive/master.zip",
+    "source-url": "https://github.com/absidish/mytestrepo/archive/master.zip",
     "ansible-playbook": "main.yml",
     "extra-vars": [
       {
         "key": "password",
-        "value": "${newOFBizdbUserPassword}"
+        "value": "${password}"
       }
     ],
     "groups": [
@@ -47,7 +47,7 @@
     ]
   },
   "user-variables": {
-    "newOFBizdbUserPassword": {
+    "password": {
       "description": "New password for ofbiz db user",
       "type": "string",
       "default": "changeme",
@@ -58,6 +58,25 @@
       "type": "string",
       "default": "wordpressenv",
       "validation": "[a-zA-Z0-9]+"
+    },
+      "ram": {
+      "description": "RAM in MB",
+      "type": "int",
+      "default": "128",
+      "validation": "[0-9]+"
+    },
+      "cpu": {
+      "description": "CPU in %",
+      "type": "int",
+      "default": "10",
+      "validation": "[0-9]+"
+     },
+      "disk": {
+      "description": "DISK in GB",
+      "type": "int",
+      "default": "10",
+      "validation": "[0-9]+"
     }
+    
   }
 }
