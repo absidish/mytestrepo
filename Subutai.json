@@ -10,8 +10,7 @@
       "peer-criteria": "HTTP-GROUP",
       "size": "CUSTOM",
       "ram": "512",
-      "cpu": "10",
-      "disk": "4"
+      "cpu": "10"
     }
   ],
   "peer-criteria": [
