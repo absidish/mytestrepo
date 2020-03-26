@@ -9,8 +9,7 @@
       "template": "debian-stretch",
       "peer-criteria": "HTTP-GROUP",
       "size": "CUSTOM",
-      "ram": "512",
-      "cpu": "10"
+      "ram": "512"
     }
   ],
   "peer-criteria": [
