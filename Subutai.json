@@ -42,7 +42,7 @@
       "description": "You can set TINY,SMALL,MEDIUM,LARGE,HUGE",
       "type": "enum",
       "default": "SMALL",
-      "validation": "TINY,SMALL,MEDIUM,LARGE,HUGE"
+      "validation": "TINY,SMALL,MEDIUM,LARGE,HUGE,CUSTOM"
     },
    "newOFBizdbUserPassword": {
       "description": "New password for ofbiz db user",
