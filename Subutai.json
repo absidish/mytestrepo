@@ -8,7 +8,10 @@
       "hostname": "debian",
       "template": "debian-stretch",
       "peer-criteria": "HTTP-GROUP",
-      "size": "${containerType}"
+      "size": "CUSTOM",
+      "ram": "512",
+      "cpu": "10",
+      "disk": "4"
     }
   ],
   "peer-criteria": [
