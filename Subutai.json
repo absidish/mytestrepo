@@ -11,15 +11,15 @@
       "size": "CUSTOM",
       "ram": {
         "type": "ram",
-        "value": "${ram}.0000MiB"
+        "value": "${ram}"
       },
       "cpu": {
         "type": "cpu",
-        "value": "${cpu}%"
+        "value": "${cpu}"
       },
       "disk": {
         "type": "disk",
-        "value": "${disk}.0000GiB"
+        "value": "${disk}"
       }
     }
   ],
