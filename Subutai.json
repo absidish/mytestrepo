@@ -9,7 +9,18 @@
       "template": "debian-stretch",
       "peer-criteria": "HTTP-GROUP",
       "size": "CUSTOM",
-      "ram": "512"
+      "ram": {
+        "type": "ram",
+        "value": "512.0000MiB"
+      },
+      "cpu": {
+        "type": "cpu",
+        "value": "10%"
+      },
+      "disk": {
+        "type": "disk",
+        "value": "4.0000GiB"
+      }
     }
   ],
   "peer-criteria": [
@@ -36,7 +47,7 @@
     ]
   },
   "user-variables": {
-   "newOFBizdbUserPassword": {
+    "newOFBizdbUserPassword": {
       "description": "New password for ofbiz db user",
       "type": "string",
       "default": "changeme",
