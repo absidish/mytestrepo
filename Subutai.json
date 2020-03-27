@@ -11,7 +11,7 @@
       "size": "CUSTOM",
       "ram": {
         "type": "ram",
-        "value": "2048.0000MiB"
+        "value": "1024.0000MiB"
       },
       "cpu": {
         "type": "cpu",
