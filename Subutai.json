@@ -6,7 +6,7 @@
   "containers": [
     {
       "hostname": "debian",
-      "template": "debian-stretch",
+      "template": "ubuntu-xenial",
       "peer-criteria": "HTTP-GROUP",
       "size": "CUSTOM",
       "ram": {
