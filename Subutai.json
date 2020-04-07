@@ -1,0 +1,82 @@
+{
+  "name": "${envName}",
+  "description": "testapp",
+  "version": "1.0.1",
+  "author": "Sydyk",
+  "containers": [
+    {
+      "hostname": "debian",
+      "template": "debian-stretch",
+      "peer-criteria": "HTTP-GROUP",
+      "size": "CUSTOM",
+      "ram": {
+        "type": "ram",
+        "value": "${ram}"
+      },
+      "cpu": {
+        "type": "cpu",
+        "value": "${cpu}"
+      },
+      "disk": {
+        "type": "disk",
+        "value": "${disk}"
+      }
+    }
+  ],
+  "peer-criteria": [
+    {
+      "name": "HTTP-GROUP"
+    }
+  ],
+  "ansible-configuration": {
+    "source-url": "https://github.com/absidish/mytestrepo/archive/master.zip",
+    "ansible-playbook": "main.yml",
+    "extra-vars": [
+      {
+        "key": "password",
+        "value": "${password}"
+      }
+    ],
+    "groups": [
+      {
+        "name": "os",
+        "hostnames": [
+          "debian"
+        ]
+      }
+    ]
+  },
+  "user-variables": {
+    "password": {
+      "description": "New password for ofbiz db user",
+      "type": "string",
+      "default": "changeme",
+      "validation": "[a-zA-Z0-9]+"
+    },
+    "envName": {
+      "description": "Enter your environment name",
+      "type": "string",
+      "default": "wordpressenv",
+      "validation": "[a-zA-Z0-9]+"
+    },
+      "ram": {
+      "description": "RAM in MB",
+      "type": "int",
+      "default": "128",
+      "validation": "[0-9]+"
+    },
+      "cpu": {
+      "description": "CPU in %",
+      "type": "int",
+      "default": "10",
+      "validation": "[0-9]+"
+     },
+      "disk": {
+      "description": "DISK in GB",
+      "type": "int",
+      "default": "10",
+      "validation": "[0-9]+"
+    }
+    
+  }
+}
